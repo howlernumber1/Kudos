@@ -10,9 +10,9 @@ const render = function(dataList) {
       .append(
         `<div class='card'>
             <h5>${dataList[i].title}<h5>
-            <h6>${dataList[i].from[0].name}</h6>
+            <h6>From: ${dataList[i].from[0].name}</h6>
           <div class='card-body'>
-            <h6>${dataList[i].to[0].name}</h6>
+            <h6>To: ${dataList[i].to[0].name}</h6>
             <p>${dataList[i].body}</p>
           </div>
         </div>`
@@ -38,9 +38,9 @@ const getUsers = function() {
       // The database _id is used as the value for each option added
       for (let i = 0; i < data.length; i++) {
         $('#kudo-from')
-          .append(`<option value='${data[i]._id}>${data[i].name}</option>'`)
+          .append(`<option value='${data[i]._id}'>${data[i].name}</option>`)
         $('#kudo-to')
-          .append(`<option value='${data[i]._id}>${data[i].name}</option>'`)
+          .append(`<option value='${data[i]._id}'>${data[i].name}</option>`)
       }
 
     });
@@ -53,7 +53,7 @@ const postKudo = function(e) {
   e.preventDefault();
   $('#messages').empty();
   // If both a sender and receiver are selected, proceed
-  if ($('#kudo-from').val() && ('#kudo-to').val()) {
+  if ($('#kudo-from').val() && $('#kudo-to').val()) {
 
     // Gather input data into an object to be POSTed to the server
 
@@ -67,14 +67,14 @@ const postKudo = function(e) {
 
     $.post('/api/kudo')
       .then(function(data) {
-
+console.log(data);
         // If our submission was successful, blank the input fields and hide the modal
         $('#kudo-title').val('');
         $('#kudo-body').val('');
         $('#kudo-from').val('');
         $('#kudo-to').val('');
 
-        $('.modal').modal('hide');
+        $('.modal').modal('toggle');
 
         // Call the getKudos function to re-render page
         getKudos();
