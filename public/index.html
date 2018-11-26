@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Kudos</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="js/kudos.js" charset="utf-8"></script>
+</head>
+
+<body>
+
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+              <h3 class="title-header">Tiny Improvements</h3>
+              <i class='fa fa-user-o' style='font-size:36px'></i>
+              <hr>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-3">
+              <div class="card">
+                  <div class="card-body">
+                      <button class="kudos-modal btn btn-secondary" type="button" data-toggle="modal" data-target="#kudoModal">Give Kudos</button>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-9" id="kudos">
+          </div>
+      </div>
+  </div>
+  <div class="modal fade bd-example-modal-lg" id="kudoModal" tabindex="-1" role="dialog" aria-labelledby="kudoModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel"> Give a Kudo! </h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div id="messages"></div>
+          <form>
+            <div class="container form-group">
+              <div class="row">
+                <div class="col-lg-3 form-area">
+                  <select name="kudo-from" id="kudo-from" class="form-control btn btn-secondary">
+                    <option selected disabled value=''>Select Sender</option>
+                  </select>
+                </div>
+                <div class="col-lg-5 form-area">
+                  <input class='form-control' type="text" id="kudo-title" placeholder="Type a title!" />
+                  <textarea class='form-control' type="text" id="kudo-body" rows="5" placeholder="Type a Message!"></textarea>
+                </div>
+                <div class="col-lg-3 form-area">
+                  <select name="kudo-to" id="kudo-to" class="form-control btn btn-secondary">
+                    <option selected disabled value=''>Select Receiver</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="send-kudo">Send Kudos!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "kudos",
+  "version": "1.0.0",
+  "description": "Kudos App",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.3.13"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markj06/Kudos.git"
+  },
+  "author": "Mark J",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/markj06/Kudos/issues"
+  },
+  "homepage": "https://github.com/markj06/Kudos#readme"
+}
