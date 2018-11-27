@@ -5,12 +5,16 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 
 
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({
+  extended: true
+}));
 app.use(express.json());
 app.use(express.static("public"));
 
 
-mongoose.connect('mongodb://localhost/kudosApp', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost/kudosApp', {
+  useNewUrlParser: true
+});
 
 
 require('./routes/api-routes')(app);

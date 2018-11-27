@@ -65,9 +65,8 @@ const postKudo = function(e) {
     }
     // Make the POST request
 
-    $.post('/api/kudo')
+    $.post('/api/kudo', kudo)
       .then(function(data) {
-console.log(data);
         // If our submission was successful, blank the input fields and hide the modal
         $('#kudo-title').val('');
         $('#kudo-body').val('');
@@ -98,6 +97,6 @@ console.log(data);
 getKudos();
 getUsers();
 
-
 // Click listener
 $(document).on('click', '#send-kudo', postKudo);
+// console.log($(document).on('click', '#send-kudo', postKudo));
