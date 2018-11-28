@@ -7,7 +7,7 @@ const render = function(dataList) {
 
   for (let i = 0; i < dataList.length; i++) {
     $('#kudos')
-      .append(
+      .prepend(
         `<div class='card'>
             <h5>${dataList[i].title}<h5>
             <h6>From: ${dataList[i].from[0].name}</h6>
